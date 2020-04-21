@@ -3,15 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://haozesong.github.io/docs/example/</loc>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/example/table-of-contents/with-toc/</loc>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/example/table-of-contents/without-toc/</loc>
+    <loc>https://haozesong.github.io/docs/home/</loc>
   </url>
   
   <url>
@@ -20,16 +12,7 @@
   </url>
   
   <url>
-    <loc>https://haozesong.github.io/posts/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/example/table-of-contents/</loc>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/example/collapsed/</loc>
+    <loc>https://haozesong.github.io/docs/home/curriculum-vitae/</loc>
   </url>
   
   <url>
@@ -43,111 +26,15 @@
   </url>
   
   <url>
-    <loc>https://haozesong.github.io/posts/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://haozesong.github.io/categories/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/categories/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/posts/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/tags/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/tags/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/categories/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/tags/hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/tags/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/tags/templates/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/tags/themes/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/example/collapsed/3rd-level/4th-level/</loc>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/example/collapsed/3rd-level/</loc>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/example/hidden/</loc>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/shortcodes/</loc>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/shortcodes/buttons/</loc>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/shortcodes/columns/</loc>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/shortcodes/expand/</loc>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/shortcodes/hints/</loc>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/shortcodes/katex/</loc>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/shortcodes/mermaid/</loc>
-  </url>
-  
-  <url>
-    <loc>https://haozesong.github.io/docs/shortcodes/tabs/</loc>
   </url>
   
   <url>
     <loc>https://haozesong.github.io/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://haozesong.github.io/tags/</loc>
   </url>
   
 </urlset>
