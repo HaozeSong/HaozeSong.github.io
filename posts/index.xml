@@ -13,10 +13,10 @@
     
     <item>
       <title>Notes for MIT 6.824 Introduction</title>
-      <link>https://haozesong.github.io/posts/creating-a-new-theme/</link>
+      <link>https://haozesong.github.io/posts/notes-for-mit-6.824-introduction/</link>
       <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://haozesong.github.io/posts/creating-a-new-theme/</guid>
+      <guid>https://haozesong.github.io/posts/notes-for-mit-6.824-introduction/</guid>
       <description>Introduction Goal  Parallelism Fault Tolerance Physical Security / Isolated  Hide the distributed nature;
 Build an interface that looks an application like a non-distributed system ;
 Challenge   Concurrent program

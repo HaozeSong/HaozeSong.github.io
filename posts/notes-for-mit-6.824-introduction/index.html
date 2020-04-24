@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction Goal  Parallelism Fault Tolerance Physical Security / Isolated  Hide the distributed nature;
+Build an interface that looks an application like a non-distributed system ;
+Challenge   Concurrent program
+ Complex interactions Timing-dependent stuff    Network Failure / Partial Failure
+  Performance
+  Infrastructure/Abstractions  Storage Communication eg:RPC Computation eg: MapReduce  Implementation RPC, Threads, concurrency control
+Topic   Performance
+ Scalability : 2x computers -&gt; 2x throughput    Fault Tolerance"><meta property="og:title" content="Notes for MIT 6.824 Introduction" />
+<meta property="og:description" content="Introduction Goal  Parallelism Fault Tolerance Physical Security / Isolated  Hide the distributed nature;
+Build an interface that looks an application like a non-distributed system ;
+Challenge   Concurrent program
+ Complex interactions Timing-dependent stuff    Network Failure / Partial Failure
+  Performance
+  Infrastructure/Abstractions  Storage Communication eg:RPC Computation eg: MapReduce  Implementation RPC, Threads, concurrency control
+Topic   Performance
+ Scalability : 2x computers -&gt; 2x throughput    Fault Tolerance" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://haozesong.github.io/posts/notes-for-mit-6.824-introduction/" />
+<meta property="article:published_time" content="2020-04-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-24T00:00:00+00:00" />
+<title>Notes for MIT 6.824 Introduction | Haoze SONG</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.284c8fc21ced13c579d9027a9d14893c56b243c6045001180391cebb4cc36ab8.css" integrity="sha256-KEyPwhztE8V52QJ6nRSJPFayQ8YEUAEYA5HOu0zDarg=">
+<script defer src="/en.search.min.e8827066baa13b4289683f5f30f3cbb14edde0684bd3c3b8414ed9c1d30ac7dd.js" integrity="sha256-6IJwZrqhO0KJaD9fMPPLsU7d4GhL08O4QU7ZwdMKx90="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Haoze SONG</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <a href="/docs/home/" class="">Home</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/home/curriculum-vitae/" class="collapsed ">Curriculum Vitae</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Notes for MIT 6.824 Introduction</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#goal">Goal</a></li>
+        <li><a href="#challenge">Challenge</a></li>
+        <li><a href="#infrastructureabstractions">Infrastructure/Abstractions</a></li>
+        <li><a href="#implementation">Implementation</a></li>
+        <li><a href="#topic">Topic</a></li>
+      </ul>
+    </li>
+    <li><a href="#mapreduce">Mapreduce</a>
+      <ul>
+        <li><a href="#framework">Framework</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/notes-for-mit-6.824-introduction/">Notes for MIT 6.824 Introduction</a>
+  </h1>
+  
+  <h5>April 24, 2020</h5>
+
+
+
+  
+
+  
+
+
+  <p><h2 id="introduction">Introduction</h2>
+<h3 id="goal">Goal</h3>
+<ul>
+<li><strong>Parallelism</strong></li>
+<li><strong>Fault Tolerance</strong></li>
+<li>Physical</li>
+<li>Security / Isolated</li>
+</ul>
+<p>Hide the distributed nature;</p>
+<p>Build an interface that looks an application like a non-distributed system ;</p>
+<h3 id="challenge">Challenge</h3>
+<ul>
+<li>
+<p>Concurrent program</p>
+<ul>
+<li>Complex interactions</li>
+<li>Timing-dependent stuff</li>
+</ul>
+</li>
+<li>
+<p>Network Failure / Partial Failure</p>
+</li>
+<li>
+<p>Performance</p>
+</li>
+</ul>
+<h3 id="infrastructureabstractions">Infrastructure/Abstractions</h3>
+<ul>
+<li>Storage</li>
+<li>Communication eg:RPC</li>
+<li>Computation eg: MapReduce</li>
+</ul>
+<h3 id="implementation">Implementation</h3>
+<p>RPC, Threads, concurrency control</p>
+<h3 id="topic">Topic</h3>
+<ul>
+<li>
+<p>Performance</p>
+<ul>
+<li>Scalability : 2x computers -&gt; 2x throughput</li>
+</ul>
+</li>
+<li>
+<p>Fault Tolerance</p>
+<ul>
+<li>Availability</li>
+<li>Recoverability</li>
+</ul>
+<p>eg: checkpoint, NV storage, Replication</p>
+</li>
+<li>
+<p>Consistency</p>
+<p>Problems: Different Version, Multi copy</p>
+<p>Type: Strong consistency, weak consistency&hellip;</p>
+</li>
+</ul>
+<h2 id="mapreduce">Mapreduce</h2>
+<h3 id="framework">Framework</h3>
+<p><img src="./MapReduce-Frame.png" alt="MapReduce-Frame" /></p>
+<ul>
+<li>
+<p>Map Function</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">Map(K,V)
+  split V into words
+  <span style="color:#66d9ef">for</span> each word w in words
+  emit (w,<span style="color:#e6db74">&#39;1&#39;</span>)
+</code></pre></div></li>
+<li>
+<p>Reduce Function</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">Reduce(K,V)
+  emit (len(v))
+</code></pre></div></li>
+</ul>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#goal">Goal</a></li>
+        <li><a href="#challenge">Challenge</a></li>
+        <li><a href="#infrastructureabstractions">Infrastructure/Abstractions</a></li>
+        <li><a href="#implementation">Implementation</a></li>
+        <li><a href="#topic">Topic</a></li>
+      </ul>
+    </li>
+    <li><a href="#mapreduce">Mapreduce</a>
+      <ul>
+        <li><a href="#framework">Framework</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
