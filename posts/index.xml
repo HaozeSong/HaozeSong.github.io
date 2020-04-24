@@ -6,19 +6,25 @@
     <description>Recent content in Blog on Haoze SONG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://haozesong.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Creating a New Theme</title>
+      <title>Notes for MIT 6.824 Introduction</title>
       <link>https://haozesong.github.io/posts/creating-a-new-theme/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://haozesong.github.io/posts/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+      <description>Introduction Goal  Parallelism Fault Tolerance Physical Security / Isolated  Hide the distributed nature;
+Build an interface that looks an application like a non-distributed system ;
+Challenge   Concurrent program
+ Complex interactions Timing-dependent stuff    Network Failure / Partial Failure
+  Performance
+  Infrastructure/Abstractions  Storage Communication eg:RPC Computation eg: MapReduce  Implementation RPC, Threads, concurrency control
+Topic   Performance
+ Scalability : 2x computers -&amp;gt; 2x throughput    Fault Tolerance</description>
     </item>
     
   </channel>
