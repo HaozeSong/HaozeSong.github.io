@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Haoze SONG</title>
+    <link>https://haozesong.github.io/posts/</link>
+    <description>Recent content in Blog on Haoze SONG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://haozesong.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Notes for MIT 6.824 Introduction</title>
+      <link>https://haozesong.github.io/posts/notes-for-mit-6.824-introduction/</link>
+      <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://haozesong.github.io/posts/notes-for-mit-6.824-introduction/</guid>
+      <description>Introduction Goal  Parallelism Fault Tolerance Physical Security / Isolated  Hide the distributed nature;
+Build an interface that looks an application like a non-distributed system ;
+Challenge   Concurrent program
+ Complex interactions Timing-dependent stuff    Network Failure / Partial Failure
+  Performance
+  Infrastructure/Abstractions  Storage Communication eg:RPC Computation eg: MapReduce  Implementation RPC, Threads, concurrency control
+Topic   Performance
+ Scalability : 2x computers -&amp;gt; 2x throughput    Fault Tolerance</description>
+    </item>
+    
+  </channel>
+</rss>
